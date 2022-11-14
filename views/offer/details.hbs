@@ -1,0 +1,38 @@
+<main>
+    <section id="deatils-page">
+        <div class="wrapper">
+            <div class="product-img">
+                <img src="{{house.homeImg}}">
+            </div>
+            <div class="product-info">
+                <div class="product-text">
+                    <div class="product-text">
+                        <h1>Name: {{house.name}}</h1>
+                        <h2>Type: {{house.type}}</h2>
+                        <h4>Year: {{house.year}}</h4>
+                        <h4>City: {{house.city}}</h4>
+                        <p>Description: {{house.propertyDescription}}</p>
+
+                    </div>
+                </div>
+
+                <div class="product-btn">
+                {{#if user}}
+
+                {{#if isOwner}}
+
+                    <!-- Only for registered user and creator of the housing offer-->
+                    <a href="/offers/{{house._id}}/edit" class="edit">Edit</a>
+                    <a href="/offers/{{house._id}}/delete" class="remove">Delete</a>
+                {{else}}
+                    <!-- logged in user with available pieces-->
+                    <a href="#" class="rentHome">Rent a home, available 2 housing</a>
+                </div>
+                  {{/if}}
+                  {{/if}}
+
+
+            </div>
+        </div>
+    </section>
+</main>
